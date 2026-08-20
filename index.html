@@ -241,9 +241,9 @@
     min-width:0;overflow-wrap:anywhere;
     color:var(--text);text-decoration:none;
     font-size:14px;
-    transition:color .2s;
+    pointer-events:none;
+    cursor:default;
   }
-  .contact-row .contact-val:hover{color:var(--pass);}
   .contact-row .contact-btn{
     color:var(--text);text-decoration:none;margin-left:auto;flex-shrink:0;
     padding:6px 14px;border:1px solid var(--border);border-radius:6px;font-size:12.5px;
@@ -256,6 +256,7 @@
     .contact-row .contact-val{
       flex:1 1 auto;display:block;
       padding:10px 14px;border:1px solid var(--border);border-radius:6px;font-size:12.5px;
+      pointer-events:auto;cursor:pointer;transition:border-color .2s, background .2s;
     }
     .contact-row .contact-val:hover{border-color:var(--pass);background:rgba(52,211,153,.08);}
     .contact-row .contact-btn{display:none;}
