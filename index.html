@@ -158,6 +158,11 @@
     display:flex;justify-content:space-between;margin-top:8px;
     font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.03em;
   }
+  .run-labels em{font-style:normal;}
+  @media(max-width:480px){
+    .run-labels{font-size:8.5px;letter-spacing:0;}
+    .run-labels em{display:none;}
+  }
 
   /* ---------- SECTIONS ---------- */
   section{padding:74px 0;border-bottom:1px solid var(--border);position:relative;z-index:1;}
@@ -317,7 +322,7 @@
           <div class="run-seg" data-seg="contact"><i></i></div>
         </div>
         <div class="run-labels">
-          <span>profile.spec</span><span>skills.spec</span><span>projects.spec</span><span>contact.spec</span>
+          <span>profile<em>.spec</em></span><span>skills<em>.spec</em></span><span>projects<em>.spec</em></span><span>contact<em>.spec</em></span>
         </div>
       </div>
     </div>
