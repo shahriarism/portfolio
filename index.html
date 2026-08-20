@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I.S.M. Shahriar — Senior QA Automation Engineer</title>
+<title>I S M Shahriar — Senior QA Automation Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -57,21 +57,25 @@
   }
   .nav-inner{
     max-width:920px;margin:0 auto;padding:16px 28px;
-    display:flex;align-items:center;justify-content:space-between;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
     font-family:var(--mono);font-size:13px;
+    overflow-x:auto;
+    scrollbar-width:none;
   }
-  .nav-brand{color:var(--pass);font-weight:600;letter-spacing:.02em;}
+  .nav-inner::-webkit-scrollbar{display:none;}
+  .nav-brand{color:var(--pass);font-weight:600;letter-spacing:.02em;white-space:nowrap;flex-shrink:0;}
   .nav-brand span{color:var(--muted);}
-  .nav-links{display:flex;gap:22px;list-style:none;}
+  .nav-links{display:flex;gap:22px;list-style:none;flex-shrink:0;white-space:nowrap;}
   .nav-links a{
     color:var(--muted);text-decoration:none;
     padding:4px 2px;border-bottom:2px solid transparent;
     transition:color .2s, border-color .2s;
     font-size:12.5px;
+    white-space:nowrap;
   }
   .nav-links a:hover{color:var(--text);}
   .nav-links a.active{color:var(--pass);border-color:var(--pass);}
-  @media(max-width:640px){ .nav-links{gap:12px;} .nav-links a{font-size:11px;} }
+  @media(max-width:640px){ .nav-links{gap:12px;} .nav-links a{font-size:11px;} .nav-inner{padding:14px 20px;} }
 
   /* ---------- HERO ---------- */
   header.hero{
@@ -225,6 +229,7 @@
   }
   .contact-row{
     display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px dashed var(--border);
+    flex-wrap:wrap;
   }
   .contact-row:last-child{border-bottom:none;}
   .contact-row .flag{
@@ -232,12 +237,21 @@
     width:20px;height:20px;flex-shrink:0;
   }
   .contact-row .flag svg{width:100%;height:100%;}
+  .contact-row .contact-val{
+    min-width:0;overflow-wrap:anywhere;
+  }
   .contact-row a{
-    color:var(--text);text-decoration:none;margin-left:auto;
+    color:var(--text);text-decoration:none;margin-left:auto;flex-shrink:0;
     padding:6px 14px;border:1px solid var(--border);border-radius:6px;font-size:12.5px;
     transition:border-color .2s, color .2s, background .2s;
   }
   .contact-row a:hover{border-color:var(--pass);color:var(--pass);background:rgba(52,211,153,.08);}
+  @media(max-width:480px){
+    .contact-term{padding:20px 16px;font-size:13px;}
+    .contact-row{gap:10px;}
+    .contact-row .contact-val{font-size:12.5px;flex:1 1 auto;}
+    .contact-row a{margin-left:0;}
+  }
 
   footer{
     padding:34px 0 50px;text-align:center;font-family:var(--mono);
@@ -270,10 +284,9 @@
     <div class="terminal">
       <div class="terminal-bar">
         <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        <span class="terminal-title">shahriar — zsh — 80×24</span>
+        <span class="terminal-title"><span class="prompt">shahriar@qa-suite</span>:~$ whoami<span class="typed-cursor"></span></span>
       </div>
       <div class="terminal-body">
-        <div class="cmd-line"><span class="prompt">shahriar@qa-suite</span>:~$ whoami<span class="typed-cursor"></span></div>
         <div class="hero-top">
           <div class="hero-top-text">
             <div class="hero-name">I S M SHAHRIAR</div>
@@ -410,17 +423,17 @@
     <div class="contact-term">
       <div class="contact-row">
         <span class="flag" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-        <span>(647) 675-6198</span>
+        <span class="contact-val">(647) 675-6198</span>
         <a href="tel:+16476756198">Call</a>
       </div>
       <div class="contact-row">
         <span class="flag" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg></span>
-        <span>shahriar.ism@gmail.com</span>
+        <span class="contact-val">shahriar.ism@gmail.com</span>
         <a href="mailto:shahriar.ism@gmail.com" target="_blank" rel="noopener">Email</a>
       </div>
       <div class="contact-row">
         <span class="flag" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span>
-        <span>linkedin.com/in/ismshahriar</span>
+        <span class="contact-val">linkedin.com/in/ismshahriar</span>
         <a href="https://www.linkedin.com/in/ismshahriar/" target="_blank" rel="noopener">Visit</a>
       </div>
     </div>
@@ -428,7 +441,7 @@
 </section>
 
 <footer>
-  <div class="wrap">© 2026 I.S.M. Shahriar — build: portfolio-demo · status: all suites passing</div>
+  <div class="wrap">© 2026 I S M Shahriar - Portfolio</div>
 </footer>
 
 <script>
