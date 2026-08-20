@@ -135,12 +135,15 @@
   .hero-sub{
     color:var(--muted);font-family:var(--sans);font-size:15.5px;max-width:520px;margin-bottom:26px;
   }
-  .hero-meta{
-    display:flex;flex-wrap:wrap;gap:10px 22px;
-    font-family:var(--mono);font-size:12.5px;color:var(--muted);
+  .hero-tags{
+    display:flex;flex-wrap:wrap;gap:9px;
     border-top:1px dashed var(--border);padding-top:18px;
   }
-  .hero-meta b{color:var(--text);font-weight:500;}
+  .hero-tag{
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:#BDEBD5;
+    border:1px solid var(--border);background:var(--surface-2);
+    padding:5px 10px;border-radius:5px;
+  }
 
   .run-bar{
     display:flex;gap:6px;margin-top:26px;
@@ -187,14 +190,6 @@
   /* Bio */
   .bio-text{font-size:16px;color:#C9D6E3;max-width:680px;margin-bottom:26px;}
   .bio-text strong{color:var(--text);}
-  .fact-grid{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;
-  }
-  .fact{
-    background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 16px;
-  }
-  .fact .k{font-family:var(--mono);font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
-  .fact .v{font-size:14.5px;font-weight:600;}
 
   /* Skills */
   .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
@@ -210,6 +205,27 @@
   .assert-line .ok{color:var(--pass);font-weight:600;}
   .skill-card h3{font-size:16px;margin-bottom:6px;}
   .skill-card p{font-size:13.5px;color:var(--muted);}
+
+  /* Quality Process */
+  .process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;}
+  .process-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:10px;
+    padding:18px 16px;text-align:center;transition:border-color .2s, transform .2s;
+  }
+  .process-card:hover{border-color:var(--pass-dim);transform:translateY(-2px);}
+  .process-num{font-family:var(--mono);font-size:12px;color:var(--pass);margin-bottom:8px;}
+  .process-card h3{font-size:15px;margin-bottom:6px;}
+  .process-card p{font-size:12.5px;color:var(--muted);}
+
+  /* Industry Experience */
+  .industry-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+  .industry-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:10px;
+    padding:18px 20px;transition:border-color .2s, transform .2s;
+  }
+  .industry-card:hover{border-color:var(--pass-dim);transform:translateY(-2px);}
+  .industry-card h3{font-size:16px;margin-bottom:8px;color:var(--amber);}
+  .industry-card p{font-size:13.5px;color:var(--muted);}
 
   /* Projects */
   .proj{
@@ -271,6 +287,8 @@
     padding:34px 0 50px;text-align:center;font-family:var(--mono);
     font-size:11.5px;color:var(--muted);position:relative;z-index:1;
   }
+  .footer-exit{font-size:13px;color:var(--muted);margin-bottom:14px;}
+  .footer-copy{font-size:11.5px;color:var(--muted);}
 
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;}
@@ -286,8 +304,10 @@
     <ul class="nav-links">
       <li><a href="#profile" data-nav>01_profile</a></li>
       <li><a href="#skills" data-nav>02_skills</a></li>
-      <li><a href="#projects" data-nav>03_projects</a></li>
-      <li><a href="#contact" data-nav>04_contact</a></li>
+      <li><a href="#process" data-nav>03_process</a></li>
+      <li><a href="#industry" data-nav>04_industry</a></li>
+      <li><a href="#projects" data-nav>05_projects</a></li>
+      <li><a href="#contact" data-nav>06_contact</a></li>
     </ul>
   </div>
 </nav>
@@ -310,19 +330,22 @@
           </div>
         </div>
         <p class="hero-sub">10+ years finding what breaks before your users do — building automation frameworks, hardening releases, and turning flaky test suites into ones teams actually trust.</p>
-        <div class="hero-meta">
-          <span><b>10+ yrs</b> experience</span>
-          <span><b>Manual + Automation</b> Testing</span>
-          <span><b>Agile / Scrum</b></span>
+        <div class="hero-tags">
+          <span class="hero-tag">PYTHON</span><span class="hero-tag">SELENIUM</span><span class="hero-tag">PLAYWRIGHT</span>
+          <span class="hero-tag">ROBOT FRAMEWORK</span><span class="hero-tag">API TESTING</span>
+          <span class="hero-tag">CI/CD</span><span class="hero-tag">SQL</span><span class="hero-tag">AODA / WCAG</span>
+          <span class="hero-tag">JIRA</span><span class="hero-tag">ALM</span><span class="hero-tag">AZURE DEVOPS</span>
         </div>
         <div class="run-bar">
           <div class="run-seg" data-seg="profile"><i></i></div>
           <div class="run-seg" data-seg="skills"><i></i></div>
+          <div class="run-seg" data-seg="process"><i></i></div>
+          <div class="run-seg" data-seg="industry"><i></i></div>
           <div class="run-seg" data-seg="projects"><i></i></div>
           <div class="run-seg" data-seg="contact"><i></i></div>
         </div>
         <div class="run-labels">
-          <span>profile<em>.spec</em></span><span>skills<em>.spec</em></span><span>projects<em>.spec</em></span><span>contact<em>.spec</em></span>
+          <span>profile<em>.spec</em></span><span>skills<em>.spec</em></span><span>process<em>.spec</em></span><span>industry<em>.spec</em></span><span>projects<em>.spec</em></span><span>contact<em>.spec</em></span>
         </div>
       </div>
     </div>
@@ -334,23 +357,17 @@
     <div class="eyebrow">01_profile.spec <span class="pass-badge">4 assertions · PASS</span></div>
     <h2 class="sec-title">About</h2>
     <p class="bio-text">
-      I'm a <strong>Senior Quality Engineer</strong> with over a decade of experience across government, banking, and retail systems, specializing in both <strong>manual and automation testing</strong>. I've led functional, regression, integration, system, and accessibility testing efforts, built automation frameworks from the ground up, and wired automated suites into CI/CD pipelines so releases stay predictable instead of stressful.
+      I'm a <strong>Senior Quality Engineer</strong> with over a decade of experience across government, healthcare, and banking systems, specializing in both <strong>manual and automation testing</strong>. I've led functional, regression, integration, system, and accessibility testing efforts, built automation frameworks from the ground up, and wired automated suites into CI/CD pipelines so releases stay predictable instead of stressful, while managing test cycles and defects in <strong>Jira, ALM &amp; Azure DevOps</strong>.
     </p>
     <p class="bio-text">
-      Recent highlights include writing a Python automation script that cut a lengthy manual test step's execution time by <strong>80%</strong> and lifted daily team throughput by <strong>50%</strong>, and earlier in my career, launching an online credit-card platform that grew credit card sales by <strong>30%</strong>. I'm comfortable owning a test strategy end-to-end: writing test plans, scripting automation, querying databases to validate results, and briefing delivery leads on release readiness.
+      My work spans across <strong>public sector</strong> (Government of Ontario), <strong>healthcare</strong> (Shoppers Drug Mart), <strong>financial services</strong> (banking platforms) &amp; <strong>telecommunication</strong> — giving me a domain-agnostic testing approach that adapts to the regulatory, compliance, and data-standard requirements specific to each industry.
     </p>
-    <div class="fact-grid">
-      <div class="fact"><div class="k">Focus</div><div class="v">Functional, Regression &amp; Accessibility QA</div></div>
-      <div class="fact"><div class="k">Automation</div><div class="v">Selenium, Robot, Cypress, Playwright</div></div>
-      <div class="fact"><div class="k">Compliance</div><div class="v">AODA / WCAG 2.1 &amp; 2.2</div></div>
-      <div class="fact"><div class="k">Delivery</div><div class="v">Agile, Scrum, CI/CD</div></div>
-    </div>
   </div>
 </section>
 
 <section id="skills">
   <div class="wrap reveal">
-    <div class="eyebrow">02_skills.spec <span class="pass-badge">5 assertions · PASS</span></div>
+    <div class="eyebrow">02_skills.spec <span class="pass-badge">9 assertions · PASS</span></div>
     <h2 class="sec-title">Top Skills</h2>
     <div class="skill-grid">
       <div class="skill-card">
@@ -378,13 +395,97 @@
         <h3>Accessibility &amp; Compliance</h3>
         <p>AXE, WAVE, NVDA — validating AODA and WCAG 2.1/2.2 conformance across GUI and non-GUI environments.</p>
       </div>
+      <div class="skill-card">
+        <div class="assert-line"><span>assert(core == "healthcare_data_standards")</span><span class="ok">PASS</span></div>
+        <h3>Healthcare Data Standards</h3>
+        <p>HL7/FHIR validation, FHIR resources &amp; implementation guides, HL7-to-FHIR R4 mapping — tested clinical communication and clinical verification workflows integrated with pharmacy management systems.</p>
+      </div>
+      <div class="skill-card">
+        <div class="assert-line"><span>assert(core == "test_strategy")</span><span class="ok">PASS</span></div>
+        <h3>Test Strategy &amp; Planning</h3>
+        <p>Test Planning, Test Strategy, Test Cases, Test Data, Risk-Based Testing — scoping coverage around what matters most before execution begins.</p>
+      </div>
+      <div class="skill-card">
+        <div class="assert-line"><span>assert(core == "functional_qa")</span><span class="ok">PASS</span></div>
+        <h3>Functional QA</h3>
+        <p>Functional, Integration, System, Regression, UAT, Smoke, Sanity — full-cycle manual coverage across every release stage.</p>
+      </div>
+      <div class="skill-card">
+        <div class="assert-line"><span>assert(core == "quality_engineering")</span><span class="ok">PASS</span></div>
+        <h3>Quality Engineering</h3>
+        <p>Defect Triage, Root Cause Analysis, Release Validation, Quality Metrics — turning test results into clear release-readiness signals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap reveal">
+    <div class="eyebrow">03_process.spec <span class="pass-badge">6 steps · PASS</span></div>
+    <h2 class="sec-title">Quality Process</h2>
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="process-num">01</div>
+        <h3>Understand</h3>
+        <p>Requirements · Business Rules · Risks</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">02</div>
+        <h3>Design</h3>
+        <p>Strategy · Scenarios · Test Case · Data</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">03</div>
+        <h3>Validate</h3>
+        <p>UI · API · Integration · Accessibility</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">04</div>
+        <h3>Automate</h3>
+        <p>Maintainable Suites · CI/CD</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">05</div>
+        <h3>Documentation</h3>
+        <p>Artefacts · Test Plan · Test Coverage</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">06</div>
+        <h3>Report</h3>
+        <p>Defects · Metrics · Release Risk</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="industry">
+  <div class="wrap reveal">
+    <div class="eyebrow">04_industry.spec <span class="pass-badge">4 sectors · PASS</span></div>
+    <h2 class="sec-title">Industry Experience</h2>
+    <div class="industry-grid">
+      <div class="industry-card">
+        <h3>Government &amp; Public Sector</h3>
+        <p>Ontario Government · Citizen-facing and enterprise applications · System, integration, regression and accessibility testing · AODA/WCAG</p>
+      </div>
+      <div class="industry-card">
+        <h3>Healthcare</h3>
+        <p>Shoppers Drug Mart (Loblaw) · HealthWatch application · HL7/FHIR clinical data validation · Pharmacy Management System integration</p>
+      </div>
+      <div class="industry-card">
+        <h3>Banking &amp; Financial Services</h3>
+        <p>Standard Chartered Bank · Online credit-card and loan platforms · Automation · Data validation · Client verification</p>
+      </div>
+      <div class="industry-card">
+        <h3>Telecommunication</h3>
+        <p>Robi Axiata Ltd · Digital services platform across mobile and web · SLA &amp; service performance monitoring · Digital service architecture</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="projects">
   <div class="wrap reveal">
-    <div class="eyebrow">03_projects.spec <span class="pass-badge">4 suites · PASS</span></div>
+    <div class="eyebrow">05_projects.spec <span class="pass-badge">4 suites · PASS</span></div>
     <h2 class="sec-title">Projects Worked</h2>
 
     <div class="proj">
@@ -398,12 +499,14 @@
     </div>
 
     <div class="proj">
-      <div class="proj-head"><h3>QA Automation Leadership</h3><span class="proj-date">Apr 2021 – Jul 2025</span></div>
-      <div class="proj-org">Loblaw Companies Ltd, Toronto</div>
+      <div class="proj-head"><h3>QA Automation &amp; Leadership</h3><span class="proj-date">Apr 2021 – Jul 2025</span></div>
+      <div class="proj-org">Loblaw Companies Ltd (Shoppers Drug Mart), Toronto</div>
       <ul>
-        <li>Led the testing team and set the automation tooling and test strategy for desktop and web-based services</li>
-        <li>Built automation frameworks using Robot and Selenium, scripted in Python and Java</li>
-        <li>Integrated automated regression suites into Jenkins CI/CD pipelines for nightly runs</li>
+        <li>Tested SDM's HealthWatch application, validating HL7/FHIR standards integrated with the Pharmacy Management System, including FHIR resources, implementation guides, and HL7-to-FHIR R4 mapping</li>
+        <li>Built test cases and data to validate HL7-FHIR messages used in Clinical Communication and Clinical Verification workflows, and ran end-to-end integration testing on the application's large-scale backend</li>
+        <li>Performed DB2 database and data reconciliation testing using SQL scripts, and validated API contracts, payloads, headers, and status codes with Postman &amp; SOAP UI</li>
+        <li>Set the automation tooling and test strategy for desktop and web-based services, building frameworks using Robot and Selenium scripted in Python and Java</li>
+        <li>Integrated automated regression suites into Jenkins CI/CD pipelines for nightly runs, and managed defects and test cycles using Jira/Zephyr and Confluence</li>
       </ul>
     </div>
 
@@ -431,7 +534,7 @@
 
 <section id="contact">
   <div class="wrap reveal">
-    <div class="eyebrow">04_contact.spec <span class="pass-badge">READY</span></div>
+    <div class="eyebrow">06_contact.spec <span class="pass-badge">READY</span></div>
     <h2 class="sec-title">Get In Touch</h2>
     <div class="contact-term">
       <div class="contact-row">
@@ -454,7 +557,10 @@
 </section>
 
 <footer>
-  <div class="wrap">© 2026 I S M Shahriar - Portfolio</div>
+  <div class="wrap">
+    <div class="footer-exit"><span class="prompt">shahriar@qa-suite</span>:~$ exit<span class="typed-cursor"></span></div>
+    <div class="footer-copy">© 2026 - I S M Shahriar - Senior QA &amp; Test Automation Engineer</div>
+  </div>
 </footer>
 
 <script>
